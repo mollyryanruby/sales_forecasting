@@ -2,7 +2,7 @@
 Predicting product sales with regressive and time-series modeling techniques
 
 ## Objective: 
-Predict the number of monthly product sales using five different machine learning techniques
+Predict the number of monthly product sales using regressive and time-series modeling techniques
 
 ## Featured Techniques:
 * EDA
