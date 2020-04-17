@@ -1,11 +1,12 @@
 """
-Loads data from Kaggle, generates monthly dataframe and performs
+This script loads data from Kaggle, generates monthly dataframe and performs
 differencing to create stationarity. Exports csv files for regression
 modeling and for Arima modeling.
 
 Data: https://www.kaggle.com/c/demand-forecasting-kernels-only/data
 
 Output CSV files
+ -- ../data/monthly_data.csv
  -- ../data/stationary_df.csv
  -- ../data/model_df.csv
  -- ../data/arima_df.csv
@@ -37,6 +38,8 @@ def monthly_sales(data):
     # Sum sales per month
     monthly_data = monthly_data.groupby('date')['sales'].sum().reset_index()
     monthly_data.date = pd.to_datetime(monthly_data.date)
+
+    monthly_data.to_csv('../data/monthly_data.csv')
 
     return monthly_data
 
