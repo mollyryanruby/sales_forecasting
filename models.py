@@ -164,8 +164,10 @@ def plot_results(results, original_df, model_name):
     -- model_name: the name that will be used in the plot title
     """
     fig, ax = plt.subplots(figsize=(15, 5))
-    sns.lineplot(original_df.date, original_df.sales, data=original_df, ax=ax, label='Original')
-    sns.lineplot(results.date, results.pred_value, data=results, ax=ax, label='Predicted')
+    sns.lineplot(original_df.date, original_df.sales, data=original_df, ax=ax,
+                 label='Original', color='mediumblue')
+    sns.lineplot(results.date, results.pred_value, data=results, ax=ax,
+                 label='Predicted', color='red')
     ax.set(xlabel="Date",
            ylabel="Sales",
            title=f"{model_name} Sales Forecasting Prediction")
